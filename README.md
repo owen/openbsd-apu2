@@ -57,14 +57,18 @@ BIOS updates require flashing the ROM. Create a bootable USB flash drive with Ti
 
 ## Update the BIOS
 
-If the BIOS needs updating - the version displayed during boot is not the latest that's on the PC Engines website - follow these steps:
+Check the [PC Engines site](https://github.com/pcengines/apu2-documentation#legacy) for the latest BIOS version.
+
+**NOTE**: The mainline coreboot versions will not work with OpenBSD as of 6.2. You must use the latest legacy version or the BIOS will not recognize your OpenBSD installer as bootable.
+
+If the BIOS needs updating follow these steps:
 
 1. Power off the APU2
 2. Insert the USB flash drive to one of the APU2's USB slots
 3. Connect the serial console cable
 4. Power on the APU2
 5. Press F10 to enter the APU2 boot menu. In the boot menu, opt to boot from the USB flash drive (usually option number 1)
-6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_160311.rom`
+6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_v4.0.12.rom`
 7. When verification is done, reboot the APU2 so changes take effect
 
 ## Install OpenBSD
